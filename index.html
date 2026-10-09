@@ -1,124 +1,553 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#09090b">
-<meta name="description" content="Shankar Dalei — creator, digital content and personal portfolio.">
-<title>Shankar Dalei — Creator Portfolio</title>
-<style>
-:root{--bg:#09090b;--card:#111114;--card2:#17171b;--text:#f5f5f5;--muted:#a1a1aa;--line:#27272a;--accent:#f5b544;--accent2:#ff7a18;--white:#fff}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at 80% 0%,#241a0b 0,transparent 32%),var(--bg);color:var(--text);line-height:1.6}
-a{text-decoration:none;color:inherit}
-.container{width:min(1120px,92%);margin:auto}
-nav{position:sticky;top:0;z-index:10;background:rgba(9,9,11,.72);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.07)}
-.navin{height:68px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-weight:900;letter-spacing:-.5px}.logo span{color:var(--accent)}
-.links{display:flex;gap:24px;color:#d4d4d8;font-size:14px}.links a:hover{color:var(--accent)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:999px;background:var(--white);color:#09090b;font-weight:800;font-size:14px;transition:.2s}.btn:hover{transform:translateY(-2px)}
-.btn.dark{background:#18181b;color:white;border:1px solid var(--line)}
-.hero{padding:86px 0 65px;display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
-.badge{display:inline-flex;border:1px solid #3a3020;background:#17130b;color:#f7c968;border-radius:999px;padding:7px 12px;font-size:12px;font-weight:800;margin-bottom:20px}
-h1{font-size:clamp(44px,7vw,78px);line-height:.98;letter-spacing:-4px;max-width:760px}
-.gradient{background:linear-gradient(90deg,#fff,#ffd77a 55%,#ff8a3d);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{color:var(--muted);font-size:18px;max-width:610px;margin:24px 0 28px}
-.actions{display:flex;gap:12px;flex-wrap:wrap}
-.heroimg{display:flex;justify-content:center;position:relative}
-.photo{width:min(340px,80vw);aspect-ratio:1;border-radius:32px;object-fit:cover;border:1px solid #38383e;box-shadow:0 30px 90px rgba(0,0,0,.55)}
-.glow{position:absolute;width:220px;height:220px;background:#f5b544;filter:blur(100px);opacity:.18;z-index:-1}
-section{padding:72px 0}
-.eyebrow{color:var(--accent);font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
-h2{font-size:clamp(30px,5vw,48px);letter-spacing:-2px;line-height:1.05;margin-bottom:12px}
-.sub{color:var(--muted);max-width:650px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
-.card{background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));border:1px solid var(--line);border-radius:22px;padding:24px;min-height:170px}
-.icon{width:42px;height:42px;border-radius:12px;background:#211b10;display:grid;place-items:center;color:var(--accent);font-size:20px;margin-bottom:18px}
-.card h3{margin-bottom:7px}.card p{color:var(--muted);font-size:14px}
-.socialgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px}
-.social{display:flex;align-items:center;justify-content:space-between;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;transition:.2s}
-.social:hover{border-color:#61502c;transform:translateY(-2px)}
-.social small{display:block;color:var(--muted);font-size:12px}.social strong{font-size:16px}
-.arrow{color:var(--accent);font-size:22px}
-.feature{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
-.featurebox{border-radius:26px;padding:30px;background:linear-gradient(135deg,#18130b,#111114);border:1px solid #332b1c;min-height:230px}
-.featurebox h3{font-size:25px;margin-bottom:10px}.featurebox p{color:var(--muted);max-width:500px}
-.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px;align-items:start}
-.abouttext p{color:var(--muted);margin:0 0 14px}
-.cta{margin-top:35px;border:1px solid #3d321f;border-radius:28px;padding:40px;background:radial-gradient(circle at 90% 0,#392a12,transparent 45%),#111114;display:flex;justify-content:space-between;gap:25px;align-items:center}
-.cta p{color:var(--muted);margin-top:8px}
-footer{border-top:1px solid var(--line);padding:28px 0;color:#71717a;font-size:13px;display:flex;justify-content:space-between;gap:20px}
-@media(max-width:800px){.links{display:none}.hero{grid-template-columns:1fr;text-align:center;padding-top:60px}.hero p{margin-left:auto;margin-right:auto}.actions{justify-content:center}.heroimg{order:-1}.photo{width:230px;border-radius:26px}.grid,.socialgrid,.feature,.about{grid-template-columns:1fr}.cta{flex-direction:column;align-items:flex-start}.navin{height:60px}section{padding:55px 0}h1{letter-spacing:-2.5px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10131f">
+  <meta name="description" content="Daily vlogs, stories, and moments from Shankar Dalei.">
+  <title>Shankar Dalei | Daily Vlogs</title>
+  <style>
+    :root {
+      --bg:#0b0e17; --panel:#131827; --panel2:#1a2032; --text:#f4f6ff;
+      --muted:#aab2c8; --accent:#7c5cff; --accent2:#21c8a4; --line:#293149;
+      --danger:#ff5f72; --shadow:0 18px 50px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(ellipse at top right,#202044 0,transparent 38%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea,select{font:inherit}
+    button,a.btn{cursor:pointer}
+    .container{width:min(1100px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(11,14,23,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+    .brand{font-size:1.05rem;font-weight:850;letter-spacing:.2px;display:flex;align-items:center;gap:10px}
+    .brand-mark{display:grid;place-items:center;width:38px;height:38px;border-radius:13px;background:linear-gradient(135deg,var(--accent),#22c9b1);box-shadow:0 8px 22px #7c5cff35}
+    .navlinks{display:flex;align-items:center;gap:18px;color:var(--muted);font-size:.92rem}
+    .navlinks a:hover{color:white}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line);padding:10px 15px;border-radius:12px;background:var(--panel2);color:var(--text);font-weight:700;transition:.18s}
+    .btn:hover{transform:translateY(-1px);border-color:#6d74a0}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),#5a8cff);border:0}
+    .btn.green{background:linear-gradient(135deg,#159d83,#22c9a6);border:0;color:#061a17}
+    .btn.danger{background:#401d2a;color:#ffdce1;border-color:#69303f}
+    .btn.small{padding:7px 10px;font-size:.85rem;border-radius:9px}
+    .hero{padding:66px 0 48px}
+    .hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:30px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:#c5baff;background:#7c5cff20;border:1px solid #7c5cff55;border-radius:100px;padding:7px 12px;font-size:.82rem;font-weight:750}
+    h1{font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.04;letter-spacing:-2px;margin:18px 0}
+    .gradient{background:linear-gradient(100deg,#b8a8ff,#6de8d2);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{font-size:1.08rem;color:var(--muted);max-width:610px}
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+    .profile-card{padding:26px;border-radius:24px;border:1px solid var(--line);background:linear-gradient(145deg,#1c2340,#111625);box-shadow:var(--shadow);text-align:center}
+    .avatar{width:104px;height:104px;border-radius:28px;margin:0 auto 15px;display:grid;place-items:center;font-size:2.6rem;font-weight:900;background:linear-gradient(135deg,#8067ff,#25d1ad);color:#fff;box-shadow:0 12px 30px #7c5cff35}
+    .profile-card h2{margin:5px 0;font-size:1.35rem}
+    .profile-card p{font-size:.93rem;margin:4px 0 18px}
+    .socials{display:flex;justify-content:center;gap:9px;flex-wrap:wrap}
+    .social{padding:9px 11px;border-radius:11px;background:#ffffff0a;border:1px solid #ffffff12;font-size:.9rem;font-weight:700}
+    .social:hover{background:#ffffff15}
+    section{padding:30px 0 42px}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:20px}
+    .section-head h2{font-size:clamp(1.6rem,3vw,2.2rem);margin:0;letter-spacing:-.6px}
+    .section-head p{margin:5px 0 0;color:var(--muted)}
+    .toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+    .field{background:#111625;border:1px solid var(--line);color:var(--text);border-radius:11px;padding:11px 13px;outline:none;min-width:0}
+    .field:focus{border-color:var(--accent);box-shadow:0 0 0 3px #7c5cff20}
+    .search{flex:1;min-width:180px}
+    select.field{min-width:145px}
+    .posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+    .post{background:linear-gradient(160deg,#171d2e,#111624);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;min-width:0;box-shadow:0 8px 25px #00000010}
+    .post-media{aspect-ratio:16/9;background:linear-gradient(135deg,#262b4b,#1b756d);display:grid;place-items:center;overflow:hidden;position:relative}
+    .post-media img{width:100%;height:100%;object-fit:cover;display:block}
+    .media-placeholder{font-size:2.4rem;opacity:.9}
+    .post-body{padding:17px;display:flex;flex-direction:column;flex:1}
+    .post-meta{font-size:.78rem;color:#aeb8d1;display:flex;justify-content:space-between;gap:8px;margin-bottom:9px}
+    .tag{color:#a99aff;background:#7c5cff20;border-radius:6px;padding:3px 7px;white-space:nowrap}
+    .post h3{font-size:1.12rem;line-height:1.3;margin:0 0 8px;overflow-wrap:anywhere}
+    .post-desc{color:var(--muted);font-size:.92rem;white-space:pre-wrap;overflow-wrap:anywhere}
+    .post-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+    .post-actions .btn{flex:1}
+    .empty{grid-column:1/-1;text-align:center;padding:45px 20px;border:1px dashed #38415b;border-radius:18px;color:var(--muted)}
+    .admin-panel{display:none;background:var(--panel);border:1px solid var(--line);padding:22px;border-radius:20px;box-shadow:var(--shadow);margin-bottom:25px}
+    .admin-panel.open{display:block}
+    .admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+    .form-group{display:flex;flex-direction:column;gap:6px}
+    .form-group label{font-size:.87rem;color:#cbd2e5;font-weight:700}
+    .form-group.full{grid-column:1/-1}
+    textarea.field{min-height:100px;resize:vertical}
+    .form-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
+    .notice{font-size:.84rem;color:var(--muted);margin-top:12px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
+    .stat{padding:15px;border:1px solid var(--line);background:#ffffff05;border-radius:14px}
+    .stat strong{display:block;font-size:1.35rem}
+    .stat span{font-size:.8rem;color:var(--muted)}
+    footer{border-top:1px solid var(--line);padding:28px 0 35px;color:var(--muted);margin-top:20px}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+    .footer-links{display:flex;gap:14px;flex-wrap:wrap}
+    .modal{position:fixed;inset:0;z-index:50;background:#050711d9;display:none;align-items:center;justify-content:center;padding:18px}
+    .modal.open{display:flex}
+    .modal-card{width:min(480px,100%);padding:23px;border:1px solid var(--line);border-radius:20px;background:#151a2a;box-shadow:var(--shadow)}
+    .modal-card h3{margin-top:0}
+    .modal-actions{display:flex;gap:9px;justify-content:flex-end;margin-top:15px}
+    .toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#f4f6ff;color:#111525;padding:11px 16px;border-radius:12px;font-weight:750;box-shadow:var(--shadow);z-index:90;transition:.2s;max-width:90%;text-align:center}
+    .toast.show{opacity:1;transform:translate(-50%,0)}
+    .hidden{display:none!important}
+    @media(max-width:800px){.hero-grid{grid-template-columns:1fr}.profile-card{max-width:520px;width:100%;margin:auto}.posts{grid-template-columns:repeat(2,minmax(0,1fr))}.navlinks{gap:10px}.hero{padding-top:44px}}
+    @media(max-width:560px){.nav{min-height:62px}.navlinks a:not(.nav-admin){display:none}.hero{padding-top:35px}.posts{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.admin-grid{grid-template-columns:1fr}.form-group.full{grid-column:auto}.stats{grid-template-columns:repeat(3,1fr)}.stat{padding:10px}.stat strong{font-size:1.1rem}h1{letter-spacing:-1.3px}.profile-card{padding:21px}}
+  </style>
 </head>
 <body>
-<nav>
-  <div class="container navin">
-    <a class="logo" href="#">SHANKAR<span>.</span></a>
-    <div class="links"><a href="#about">About</a><a href="#work">What I Do</a><a href="#connect">Connect</a></div>
-    <a class="btn dark" href="#connect">Let's Connect</a>
-  </div>
-</nav>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Shankar Dalei home"><span class="brand-mark">SD</span><span>Shankar Dalei</span></a>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="#vlogs">Vlogs</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button class="btn small nav-admin" id="adminToggle" type="button">🔐 Admin</button>
+      </nav>
+    </div>
+  </header>
 
-<main>
-<section class="hero container">
-  <div>
-    <div class="badge">● CREATOR PORTFOLIO</div>
-    <h1>Hi, I'm <span class="gradient">Shankar Dalei.</span></h1>
-    <p>Digital creator building content, ideas and a personal brand across social platforms. Welcome to my official space on the web.</p>
-    <div class="actions">
-      <a class="btn" href="https://youtube.com/@shankar.dalei2006?si=-tJexghzTa2zdBmq" target="_blank">▶ Watch on YouTube</a>
-      <a class="btn dark" href="#connect">Explore My Links ↓</a>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">🎬 DAILY LIFE • REAL MOMENTS</span>
+          <h1>Life is a story.<br><span class="gradient">Let's capture it.</span></h1>
+          <p>Welcome to my world! Follow Shankar Dalei for daily vlogs, memorable moments, local adventures, and stories from everyday life.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#vlogs">▶ Explore Vlogs</a>
+            <a class="btn" href="https://youtube.com/@shankar.dalei2006?feature=shared" target="_blank" rel="noopener noreferrer">▶ Subscribe on YouTube</a>
+          </div>
+        </div>
+        <aside class="profile-card" id="about">
+          <div class="avatar" aria-label="Shankar Dalei initials">SD</div>
+          <h2>Shankar Dalei</h2>
+          <p>Creator · Vlogger · Storyteller</p>
+          <div class="socials">
+            <a class="social" href="https://www.instagram.com/ishankardalei?srtk=MW9qcjF0c2oyeWU3MA==" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
+            <a class="social" href="https://www.facebook.com/share/14oKL7hpnS8/" target="_blank" rel="noopener noreferrer">🔵 Facebook</a>
+            <a class="social" href="https://youtube.com/@shankar.dalei2006?feature=shared" target="_blank" rel="noopener noreferrer">▶ YouTube</a>
+            <a class="social" href="https://wa.me/919692552608" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="vlogs">
+      <div class="container">
+        <div class="section-head">
+          <div><h2>Latest Vlogs</h2><p>Stories, moments, and updates from my journey.</p></div>
+          <span class="tag" id="postCount">0 posts</span>
+        </div>
+
+        <div class="admin-panel" id="adminPanel">
+          <div class="section-head">
+            <div><h2>Admin Dashboard</h2><p>Add a new vlog or manage existing posts.</p></div>
+            <button class="btn small" id="logoutBtn" type="button">Log out</button>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong id="statPosts">0</strong><span>Total posts</span></div>
+            <div class="stat"><strong id="statCategories">0</strong><span>Categories</span></div>
+            <div class="stat"><strong id="statStorage">Local</strong><span>Storage mode</span></div>
+          </div>
+          <form id="postForm">
+            <input type="hidden" id="editId">
+            <div class="admin-grid">
+              <div class="form-group">
+                <label for="postTitle">Vlog title *</label>
+                <input class="field" id="postTitle" maxlength="100" required placeholder="e.g. My Sunday Adventure">
+              </div>
+              <div class="form-group">
+                <label for="postCategory">Category</label>
+                <select class="field" id="postCategory">
+                  <option>Daily Vlog</option><option>Travel</option><option>Food</option><option>Village Life</option><option>Behind the Scenes</option><option>Story</option><option>Other</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label for="postDescription">Description</label>
+                <textarea class="field" id="postDescription" maxlength="2000" placeholder="Write a short description about this vlog..."></textarea>
+              </div>
+              <div class="form-group">
+                <label for="postImage">Cover image URL (optional)</label>
+                <input class="field" id="postImage" type="url" placeholder="https://example.com/photo.jpg">
+              </div>
+              <div class="form-group">
+                <label for="postVideo">Video / YouTube URL (optional)</label>
+                <input class="field" id="postVideo" type="url" placeholder="https://youtube.com/watch?v=...">
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn primary" type="submit" id="savePostBtn">＋ Publish Vlog</button>
+              <button class="btn hidden" type="button" id="cancelEditBtn">Cancel edit</button>
+              <button class="btn" type="button" id="exportBtn">⬇ Export Backup</button>
+              <label class="btn" for="importFile">⬆ Import Backup</label>
+              <input class="hidden" id="importFile" type="file" accept="application/json,.json">
+            </div>
+            <p class="notice">Posts are saved in this browser on this device. This is a local demo: posts will not automatically sync to other devices or visitors. Export a backup regularly.</p>
+          </form>
+        </div>
+
+        <div class="toolbar">
+          <input class="field search" id="searchInput" type="search" placeholder="🔎 Search vlogs..." aria-label="Search vlogs">
+          <select class="field" id="categoryFilter" aria-label="Filter by category"><option value="all">All categories</option></select>
+          <select class="field" id="sortFilter" aria-label="Sort vlogs"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="az">Title A–Z</option></select>
+        </div>
+        <div class="posts" id="postsGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head"><div><h2>Let's Connect</h2><p>Follow my journey or message me directly.</p></div></div>
+        <div class="profile-card">
+          <h2>Thanks for visiting! 💜</h2>
+          <p>Follow, share, and stay connected with Shankar Dalei.</p>
+          <div class="socials">
+            <a class="social" href="https://www.instagram.com/ishankardalei?srtk=MW9qcjF0c2oyeWU3MA==" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a class="social" href="https://www.facebook.com/share/14oKL7hpnS8/" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a class="social" href="https://youtube.com/@shankar.dalei2006?feature=shared" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a class="social" href="https://wa.me/919692552608" target="_blank" rel="noopener noreferrer">WhatsApp me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> <strong>Shankar Dalei</strong>. Made with ❤️ for my journey.</div>
+      <div class="footer-links"><a href="#home">Home</a><a href="#vlogs">Vlogs</a><a href="#contact">Contact</a></div>
+    </div>
+  </footer>
+
+  <div class="modal" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+    <div class="modal-card">
+      <h3 id="loginTitle">🔐 Admin Login</h3>
+      <p style="color:var(--muted);margin-top:-5px">Enter your admin PIN to manage vlog posts.</p>
+      <form id="loginForm">
+        <label for="adminPin">Admin PIN</label>
+        <input class="field" id="adminPin" type="password" inputmode="numeric" autocomplete="current-password" required style="width:100%;margin-top:7px" placeholder="Enter PIN">
+        <div class="modal-actions"><button class="btn" type="button" id="closeLogin">Cancel</button><button class="btn primary" type="submit">Log in</button></div>
+        <p class="notice">Default PIN: <strong>1234</strong>. Change it in the code before publishing. This simple PIN is not secure authentication for a public website.</p>
+      </form>
     </div>
   </div>
-  <div class="heroimg"><div class="glow"></div><img class="photo" src="profile.png" alt="Shankar Dalei profile photo"></div>
-</section>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<section id="work">
-  <div class="container">
-    <div class="eyebrow">My Focus</div>
-    <h2>Creating. Sharing. Growing.</h2>
-    <p class="sub">A simple creator portfolio that brings my content and social presence together in one professional place.</p>
-    <div class="grid">
-      <div class="card"><div class="icon">✦</div><h3>Content</h3><p>Ideas, short-form content and digital storytelling made for social audiences.</p></div>
-      <div class="card"><div class="icon">◉</div><h3>Personal Brand</h3><p>Building a recognizable online identity and connecting with people through content.</p></div>
-      <div class="card"><div class="icon">↗</div><h3>Growth</h3><p>Learning, experimenting and improving every step of the creator journey.</p></div>
-    </div>
-    <div class="feature">
-      <div class="featurebox"><div class="eyebrow">Featured</div><h3>My YouTube Channel</h3><p>Explore my videos and follow the journey. New content and ideas are always on the way.</p><br><a class="btn" href="https://youtube.com/@shankar.dalei2006?si=-tJexghzTa2zdBmq" target="_blank">Visit YouTube →</a></div>
-      <div class="featurebox"><div class="eyebrow">Instagram</div><h3>Follow the Daily Journey</h3><p>Stay connected through my Instagram profiles for updates, posts and creator content.</p><br><a class="btn dark" href="https://www.instagram.com/shankar_insights_01?stkn=ZGdkYzdmMjlwdmpl" target="_blank">Open Instagram →</a></div>
-    </div>
-  </div>
-</section>
+  <script>
+    // IMPORTANT: This client-side PIN is only a basic convenience, not secure access control.
+    // Change DEFAULT_ADMIN_PIN before publishing. For real public admin security, use a backend.
+    const DEFAULT_ADMIN_PIN = "9078";
+    const STORAGE_KEY = "shankarDaleiVlogs_v1";
+    const $ = (selector) => document.querySelector(selector);
+    let posts = loadPosts();
+    let isAdmin = false;
+    let toastTimer;
 
-<section id="about">
-  <div class="container about">
-    <div><div class="eyebrow">About Me</div><h2>More than a profile.</h2></div>
-    <div class="abouttext">
-      <p>I'm Shankar Dalei, a digital creator focused on building my online presence through social media and video content.</p>
-      <p>This website is my central hub — a place where you can discover my work, follow my channels and connect with me across platforms.</p>
-      <p>Thanks for visiting and being part of the journey.</p>
-    </div>
-  </div>
-</section>
+    function loadPosts() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed)) return parsed;
+        }
+      } catch (error) { console.warn("Could not load saved posts", error); }
+      return [
+        {
+          id: "welcome-post",
+          title: "Welcome to My Daily Vlog Website!",
+          category: "Daily Vlog",
+          description: "Hello friends! Welcome to my official vlog website. I will share my daily life, special moments, adventures, and new stories here. Follow me on social media and stay connected. ❤️",
+          image: "",
+          video: "https://youtube.com/@shankar.dalei2006?feature=shared",
+          date: new Date().toISOString()
+        }
+      ];
+    }
 
-<section id="connect">
-  <div class="container">
-    <div class="eyebrow">Connect</div><h2>Find me online.</h2>
-    <p class="sub">Choose your favorite platform and let's connect.</p>
-    <div class="socialgrid">
-      <a class="social" href="https://www.instagram.com/shankar_insights_01?stkn=ZGdkYzdmMjlwdmpl" target="_blank"><span><small>INSTAGRAM</small><strong>@shankar_insights_01</strong></span><span class="arrow">↗</span></a>
-      <a class="social" href="https://www.instagram.com/ishankardalei?stkn=MW9qcjF0c2oyeWU3MA==" target="_blank"><span><small>INSTAGRAM</small><strong>@ishankardalei</strong></span><span class="arrow">↗</span></a>
-      <a class="social" href="https://www.facebook.com/share/1D8rv6MA7m/" target="_blank"><span><small>FACEBOOK</small><strong>Shankar Dalei</strong></span><span class="arrow">↗</span></a>
-      <a class="social" href="https://youtube.com/@shankar.dalei2006?si=-tJexghzTa2zdBmq" target="_blank"><span><small>YOUTUBE</small><strong>Shankar Dalei</strong></span><span class="arrow">↗</span></a>
-      <a class="social" href="https://www.linkedin.com/in/shankar-dalei-34031b242?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank"><span><small>LINKEDIN</small><strong>Shankar Dalei</strong></span><span class="arrow">↗</span></a>
-    </div>
-    <div class="cta"><div><h3>Want to collaborate?</h3><p>Reach out through any of my social platforms.</p></div><a class="btn" href="https://www.instagram.com/shankar_insights_01?stkn=ZGdkYzdmMjlwdmpl" target="_blank">Message Me →</a></div>
-  </div>
-</section>
-</main>
+    function savePosts() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(posts));
+        return true;
+      } catch (error) {
+        showToast("Could not save. Browser storage may be full.");
+        return false;
+      }
+    }
 
-<footer class="container"><span>© 2026 Shankar Dalei. All rights reserved.</span><span>Creator Portfolio</span></footer>
+    function safeText(value) {
+      return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
+      })[char]);
+    }
+
+    function validHttpUrl(value) {
+      if (!value) return "";
+      try {
+        const url = new URL(value);
+        return (url.protocol === "https:" || url.protocol === "http:") ? url.href : "";
+      } catch { return ""; }
+    }
+
+    function dateLabel(value) {
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return "Date not available";
+      return date.toLocaleDateString(undefined, { year:"numeric", month:"short", day:"numeric" });
+    }
+
+    function showToast(message) {
+      const toast = $("#toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 2600);
+    }
+
+    function categories() {
+      return [...new Set(posts.map(post => post.category || "Other"))].sort((a,b) => a.localeCompare(b));
+    }
+
+    function updateCategoryFilter() {
+      const filter = $("#categoryFilter");
+      const current = filter.value || "all";
+      filter.innerHTML = '<option value="all">All categories</option>' +
+        categories().map(category => `<option value="${safeText(category)}">${safeText(category)}</option>`).join("");
+      filter.value = categories().includes(current) ? current : "all";
+    }
+
+    function renderPosts() {
+      updateCategoryFilter();
+      const query = $("#searchInput").value.trim().toLowerCase();
+      const category = $("#categoryFilter").value;
+      const sort = $("#sortFilter").value;
+      let filtered = posts.filter(post => {
+        const matchesQuery = [post.title, post.description, post.category].join(" ").toLowerCase().includes(query);
+        return matchesQuery && (category === "all" || post.category === category);
+      });
+      filtered.sort((a,b) => {
+        if (sort === "az") return a.title.localeCompare(b.title);
+        const timeA = new Date(a.date).getTime() || 0;
+        const timeB = new Date(b.date).getTime() || 0;
+        return sort === "oldest" ? timeA-timeB : timeB-timeA;
+      });
+
+      $("#postCount").textContent = `${filtered.length} ${filtered.length === 1 ? "post" : "posts"}`;
+      $("#statPosts").textContent = posts.length;
+      $("#statCategories").textContent = categories().length;
+      const grid = $("#postsGrid");
+      if (!filtered.length) {
+        grid.innerHTML = '<div class="empty"><div style="font-size:2rem">🎬</div><h3>No vlogs found</h3><p>Try another search, or add a new post from the admin panel.</p></div>';
+        return;
+      }
+
+      grid.innerHTML = filtered.map(post => {
+        const imageUrl = validHttpUrl(post.image);
+        const videoUrl = validHttpUrl(post.video);
+        const media = imageUrl
+          ? `<img src="${safeText(imageUrl)}" alt="${safeText(post.title)} cover" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="media-placeholder" style="display:none">🎥</div>`
+          : '<div class="media-placeholder">🎥</div>';
+        const adminActions = isAdmin
+          ? `<button class="btn small" type="button" data-edit="${safeText(post.id)}">✏️ Edit</button><button class="btn small danger" type="button" data-delete="${safeText(post.id)}">🗑 Delete</button>`
+          : "";
+        const videoButton = videoUrl ? `<a class="btn small primary" href="${safeText(videoUrl)}" target="_blank" rel="noopener noreferrer">▶ Watch</a>` : "";
+        return `<article class="post">
+          <div class="post-media">${media}</div>
+          <div class="post-body">
+            <div class="post-meta"><span>${safeText(dateLabel(post.date))}</span><span class="tag">${safeText(post.category || "Other")}</span></div>
+            <h3>${safeText(post.title)}</h3>
+            <div class="post-desc">${safeText(post.description || "No description added yet.")}</div>
+            <div class="post-actions">${videoButton}<button class="btn small" type="button" data-share="${safeText(post.id)}">↗ Share</button>${adminActions}</div>
+          </div>
+        </article>`;
+      }).join("");
+    }
+
+    function resetForm() {
+      $("#postForm").reset();
+      $("#editId").value = "";
+      $("#savePostBtn").textContent = "＋ Publish Vlog";
+      $("#cancelEditBtn").classList.add("hidden");
+    }
+
+    function startEdit(id) {
+      const post = posts.find(item => item.id === id);
+      if (!post) return;
+      $("#editId").value = post.id;
+      $("#postTitle").value = post.title || "";
+      $("#postCategory").value = post.category || "Other";
+      $("#postDescription").value = post.description || "";
+      $("#postImage").value = post.image || "";
+      $("#postVideo").value = post.video || "";
+      $("#savePostBtn").textContent = "💾 Save Changes";
+      $("#cancelEditBtn").classList.remove("hidden");
+      $("#adminPanel").scrollIntoView({ behavior:"smooth", block:"start" });
+      $("#postTitle").focus();
+    }
+
+    function deletePost(id) {
+      const post = posts.find(item => item.id === id);
+      if (!post) return;
+      if (!confirm(`Delete "${post.title}"? This cannot be undone unless you have a backup.`)) return;
+      posts = posts.filter(item => item.id !== id);
+      savePosts();
+      renderPosts();
+      showToast("Vlog deleted.");
+    }
+
+    async function sharePost(id) {
+      const post = posts.find(item => item.id === id);
+      if (!post) return;
+      const shareUrl = validHttpUrl(post.video) || location.href.split("#")[0] + "#vlogs";
+      const shareData = { title: post.title, text: `${post.title} — by Shankar Dalei`, url: shareUrl };
+      try {
+        if (navigator.share) await navigator.share(shareData);
+        else if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(`${shareData.text}\n${shareData.url}`);
+          showToast("Vlog details copied to clipboard.");
+        } else {
+          window.prompt("Copy this vlog link:", `${shareData.text}\n${shareData.url}`);
+        }
+      } catch (error) {
+        if (error.name !== "AbortError") showToast("Sharing was cancelled or unavailable.");
+      }
+    }
+
+    function exportBackup() {
+      const data = JSON.stringify({ app:"Shankar Dalei Daily Vlog", version:1, exportedAt:new Date().toISOString(), posts }, null, 2);
+      const blob = new Blob([data], {type:"application/json"});
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement("a");
+      anchor.href = url;
+      anchor.download = `shankar-dalei-vlogs-backup-${new Date().toISOString().slice(0,10)}.json`;
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
+      URL.revokeObjectURL(url);
+      showToast("Backup exported.");
+    }
+
+    $("#adminToggle").addEventListener("click", () => {
+      if (isAdmin) {
+        $("#adminPanel").classList.toggle("open");
+        if ($("#adminPanel").classList.contains("open")) $("#adminPanel").scrollIntoView({behavior:"smooth",block:"start"});
+      } else {
+        $("#loginModal").classList.add("open");
+        $("#adminPin").value = "";
+        setTimeout(() => $("#adminPin").focus(), 50);
+      }
+    });
+
+    $("#closeLogin").addEventListener("click", () => $("#loginModal").classList.remove("open"));
+    $("#loginModal").addEventListener("click", event => {
+      if (event.target === $("#loginModal")) $("#loginModal").classList.remove("open");
+    });
+
+    $("#loginForm").addEventListener("submit", event => {
+      event.preventDefault();
+      if ($("#adminPin").value === DEFAULT_ADMIN_PIN) {
+        isAdmin = true;
+        $("#loginModal").classList.remove("open");
+        $("#adminPanel").classList.add("open");
+        $("#adminToggle").textContent = "⚙️ Dashboard";
+        $("#logoutBtn").classList.remove("hidden");
+        renderPosts();
+        $("#adminPanel").scrollIntoView({behavior:"smooth",block:"start"});
+        showToast("Admin mode enabled.");
+      } else {
+        showToast("Incorrect PIN. Try again.");
+        $("#adminPin").select();
+      }
+    });
+
+    $("#logoutBtn").addEventListener("click", () => {
+      isAdmin = false;
+      $("#adminPanel").classList.remove("open");
+      $("#adminToggle").textContent = "🔐 Admin";
+      resetForm();
+      renderPosts();
+      showToast("Logged out.");
+    });
+
+    $("#postForm").addEventListener("submit", event => {
+      event.preventDefault();
+      if (!isAdmin) return showToast("Please log in as admin first.");
+      const title = $("#postTitle").value.trim();
+      if (!title) return showToast("Please enter a vlog title.");
+      const imageRaw = $("#postImage").value.trim();
+      const videoRaw = $("#postVideo").value.trim();
+      const image = imageRaw ? validHttpUrl(imageRaw) : "";
+      const video = videoRaw ? validHttpUrl(videoRaw) : "";
+      if (imageRaw && !image) return showToast("Cover image must be a valid http(s) URL.");
+      if (videoRaw && !video) return showToast("Video URL must be a valid http(s) URL.");
+      const editId = $("#editId").value;
+      const existing = posts.find(item => item.id === editId);
+      const post = {
+        id: existing ? existing.id : (window.crypto && crypto.randomUUID ? crypto.randomUUID() : String(Date.now())),
+        title,
+        category: $("#postCategory").value || "Other",
+        description: $("#postDescription").value.trim(),
+        image,
+        video,
+        date: existing ? existing.date : new Date().toISOString()
+      };
+      if (existing) posts = posts.map(item => item.id === editId ? post : item);
+      else posts.unshift(post);
+      savePosts();
+      resetForm();
+      renderPosts();
+      showToast(existing ? "Vlog updated!" : "Vlog published!");
+      $("#postsGrid").scrollIntoView({behavior:"smooth",block:"start"});
+    });
+
+    $("#cancelEditBtn").addEventListener("click", resetForm);
+    $("#searchInput").addEventListener("input", renderPosts);
+    $("#categoryFilter").addEventListener("change", renderPosts);
+    $("#sortFilter").addEventListener("change", renderPosts);
+    $("#postsGrid").addEventListener("click", event => {
+      const editButton = event.target.closest("[data-edit]");
+      const deleteButton = event.target.closest("[data-delete]");
+      const shareButton = event.target.closest("[data-share]");
+      if (editButton && isAdmin) startEdit(editButton.dataset.edit);
+      if (deleteButton && isAdmin) deletePost(deleteButton.dataset.delete);
+      if (shareButton) sharePost(shareButton.dataset.share);
+    });
+
+    $("#exportBtn").addEventListener("click", exportBackup);
+    $("#importFile").addEventListener("change", async event => {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+      try {
+        const parsed = JSON.parse(await file.text());
+        const imported = Array.isArray(parsed) ? parsed : parsed.posts;
+        if (!Array.isArray(imported)) throw new Error("This file does not contain a posts array.");
+        const cleaned = imported.map((item, index) => {
+          if (!item || typeof item.title !== "string" || !item.title.trim()) throw new Error("Backup contains a post without a title.");
+          return {
+            id: String(item.id || `import-${Date.now()}-${index}`),
+            title: item.title.slice(0,100),
+            category: typeof item.category === "string" ? item.category.slice(0,60) : "Other",
+            description: typeof item.description === "string" ? item.description.slice(0,2000) : "",
+            image: validHttpUrl(item.image || ""),
+            video: validHttpUrl(item.video || ""),
+            date: item.date && !Number.isNaN(new Date(item.date).getTime()) ? new Date(item.date).toISOString() : new Date().toISOString()
+          };
+        });
+        if (!confirm(`Import ${cleaned.length} posts? This replaces the posts currently saved in this browser.`)) return;
+        posts = cleaned;
+        savePosts();
+        resetForm();
+        renderPosts();
+        showToast("Backup imported successfully.");
+      } catch (error) {
+        showToast(error.message || "Could not import this backup file.");
+      } finally {
+        event.target.value = "";
+      }
+    });
+
+    $("#year").textContent = new Date().getFullYear();
+    renderPosts();
+  </script>
 </body>
 </html>
